@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Two-Factor Authentication PoC</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Register</h1>
+
+    <form id="register-form">
+      <div class="control">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" class="input">
+      </div>
+
+      <div class="control">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" class="input">
+      </div>
+
+      <button class="submit">Register</button>
+    </form>
+
+    <form id="two-factor-method-form">
+      <div class="control">
+        <label>
+          <input type="radio" name="two-factor-method" value="totp" id="totp" checked>
+          Google Authenticator
+        </label>
+      </div>
+
+      <div class="control">
+        <label>
+          <input type="radio" name="two-factor-method" value="sms" id="sms">
+          SMS
+        </label>
+      </div>
+
+      <div class="control" id="phone-number-control">
+        <label for="phone_number">Phone number:</label>
+        <input type="phone" name="phone_number" id="phone_number" class="input">
+      </div>
+
+      <button class="submit">Continue</button>
+    </form>
+
+    <form id="sms-form">
+      <p>
+        We have sent a one time password to <strong id="phone-number-show"></strong>. Fill in the password below to complete your authentication.
+      </p>
+
+      <div class="control">
+        <label for="sms_token">One time password:</label>
+        <input type="text" name="sms_token" id="sms_token">
+      </div>
+
+      <div class="error" id="sms-code-error">The code you have entered is invalid</div>
+
+      <div class="control">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <form id="qr-code-form">
+      <p>
+        Scan the image below in your Google Authenticator app and enter the one time code you are given.
+      </p>
+
+      <div class="qr-image"></div>
+      
+      <div class="control">
+        <label for="token">One time password:</label>
+        <input type="text" name="token" id="token" class="input">
+      </div>
+      
+      <div class="error" id="qr-code-error">The code you have entered is invalid</div>
+
+      <div class="control">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+  <script src="/app.js"></script>
+  <script src="/register.js"></script>
+</body>
+</html>

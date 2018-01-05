@@ -1,0 +1,65 @@
+body {
+  margin: 10px;
+  font-family: sans-serif;
+  background: #F1F6F5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.success {
+  color: #3EA222;
+  font-weight: bold;
+}
+
+#logged-in-page {
+  display: none;
+}
+
+#facebook {
+  font-size: 1.2em;
+}
+
+#facebook img {
+  max-width: 60px;
+  height: auto;
+}
+
+.app {
+  width: 40%;
+  margin: 3rem auto;
+  background: white;
+  padding: 1.5rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.control {
+  margin-bottom: 1rem;
+}
+
+.input {
+  display: block;
+  border: 1px solid #CCC;
+  outline: 0;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+#two-factor-form,
+#sms-form,
+#logged-in,
+#two-factor-method-form,
+#phone-number-control,
+#qr-code-form {
+  display: none;
+}
+
+.error {
+  display: none;
+  color: #C40019;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}

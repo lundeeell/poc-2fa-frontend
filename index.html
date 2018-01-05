@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Two-Factor Authentication PoC</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>Welcome</h1>
+
+    <div id="logged-in" class="success">
+      You are logged in!
+
+      <p>
+        <a href="javascript:logout()">Logout</a>
+      </p>
+    </div>
+
+    <form action="" id="login-form">
+      <div class="control">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" class="input">
+      </div>
+
+      <div class="control">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" class="input">
+      </div>
+
+      <div class="error" id="login-error">Invalid username or password</div>
+      
+      <div class="control">
+        <button type="submit" class="button">Login</button>
+      </div>
+
+      <p>
+        <a href="/register.html">Register</a>
+      </p>
+    </form>
+
+    <form id="two-factor-form">
+      <div class="control">
+        <label for="token">One time password:</label>
+        <input type="text" name="token" id="token" class="input">
+      </div>
+
+      <div class="error" id="one-time-password-error">Invalid one time password</div>
+
+      <div class="control">
+        <button type="submit" class="button">Submit</button>
+      </div>
+    </form>
+
+    <div id="logged-in-page">
+      <span class="success">You are logged in!</span>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
+  <script src="/login.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
